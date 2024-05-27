@@ -19,11 +19,11 @@ const genDiff = (filepath1, filepath2) => {
       return `- ${key}: ${obj1[key]} `;
     }
     if (obj1[key] !== obj2[key]) {
-       return `- ${key}: ${obj1[key]}\n+ ${key}: ${obj2[key]}`;
+      return `- ${key}: ${obj1[key]}\n+ ${key}: ${obj2[key]}`;
     }
     if (obj1[key] == obj2[key]) {
-        return `  ${key}: ${obj1[key]} `;
-     }
+      return `  ${key}: ${obj1[key]} `;
+    }
   });
   return `{\n${result.join('\n')}\n}`;
   // результат сравнения двух файлов

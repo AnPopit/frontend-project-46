@@ -11,6 +11,8 @@ const parsing = (file, format) => {
       return yaml.load(file, 'utf8');
     case '.yaml':
       return yaml.load(file, 'utf8');
+      default:
+        throw new Error(`Unknown format: '${format}'!`);
   }
 };
 

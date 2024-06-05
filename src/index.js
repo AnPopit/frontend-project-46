@@ -2,8 +2,10 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import parsing from './parsers.js';
+//import parsing from './fo.js';
 
-const genDiff = (filepath1, filepath2) => {
+
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const filePath1 = path.resolve(process.cwd(), filepath1);
   const file1 = fs.readFileSync(filePath1, 'utf8');
   const format1 = path.extname(filePath1);
@@ -27,7 +29,7 @@ const genDiff = (filepath1, filepath2) => {
       return `    ${key}: ${obj1[key]}`;
     }
   });
-  return `{\n${result.join('\n')}\n}`;
+  return `{\n${result.join('\n')}\n}`; //дерево отличий в отдельный файл
 };
 
 export default genDiff;

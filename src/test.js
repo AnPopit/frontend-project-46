@@ -12,17 +12,17 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
  // const format2 = path.extname(filePath2);
  // const obj1 = parsing(file1, format1);
   //const obj2 = parsing(file2, format2);
-  const obj1 = {"host": "hexlet.io","timeout": 50,"proxy": "123.234.53.22","follow": false};
-  const obj2 = {"timeout": 20,"verbose": true,"ost": {"host": "hexlet.io","timeout": 50} };
+  const obj1 = {"host": "hexlet.io","timeout": 20,"proxy": "123.234.53.22","follow": false};
+  const obj2 = {"verbose": true,"ost": {"host": "hexlet.io","timeout": 50} };
   const obj3 = [...new Set([...Object.entries(obj1), ...Object.entries(obj2)])];
   const keys1 = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
   console.log(obj3);
-    const iter = (node, d) => {
+    const iter = (node) => {
     const keys = Object.keys(node);   
     console.log(keys);
     const result = keys.sort().map((key) => {
     if (node[key] !== null && typeof node[key] === 'object') {
-        return `{\n"key": "${[key]}"\n"children": ${iter(node[key], d +1)}\n}`;
+        return `{\n"key": "${[key]}"\n"children": [${iter(node[key])}\n}`;
     }
     if (!obj1.hasOwnProperty(key)) {
       return `{\n"key": "${key}"\n"value": ${obj2[key]}\n"type": added\n}`;
@@ -34,12 +34,12 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
       return `{\n"key": "${key}"\n"value1": ${obj1[key]}\n"value2": ${obj2[key]}\n"type": changed\n}`;
     }
     if (obj1[key] === obj2[key]) {
-      return `{\n"key": "${key}"\n"value": ${obj1[key]}\n"type": unchanged\n}`;
+      return {"key": key"\n"value": ${obj1[key]}\n"type": unchanged\n}`;
     }
   });
-  return `{\n${result.join('\n')}\n}`; //дерево отличий в отдельный файл
-}
-return iter(obj3, 1);
+  return `[\n${result.join('\n')}\n]`; //дерево отличий в отдельный файл
+    }
+return iter(obj3);
 };
 
 console.log(genDiff());

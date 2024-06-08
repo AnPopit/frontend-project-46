@@ -2,33 +2,36 @@ const genDiff = () => {
   const obj1 = {
     host: 'hexlet.io', timeout: 20, proxy: '123.234.53.22', follow: false,
   };
-  const obj2 = { verbose: true, ost: { host: 'hexlet.io', timeout: 50 } };
-  const obj3 = [...new Set([...Object.entries(obj1), ...Object.entries(obj2)])];
-  console.log(obj3);
-  // const iter = (node) => {
-  // const keys = Object.keys(node);
-  // console.log(keys);
-  // const result = keys.sort().map((key) => {
-  // if (node[key] !== null && typeof node[key] === 'object') {
-  //   return `{\n"key": "${[key]}"\n"children": [${iter(node[key])}\n}`; //  "type": "nested"
-  // }
-  // if (!obj1.hasOwnProperty(key)) {
-  //   return `{\n"key": "${key}"\n"value": ${obj2[key]}\n"type": added\n}`;
-  // }
-  // if (!obj2.hasOwnProperty(key)) {
-  //   return `{\n"key": "${key}"\n"value": ${obj1[key]}\n"type": deleted\n}`;
-  // }
-  // if (obj1[key] !== obj2[key]) {
-  //  return `{\n"key": "${key}"\n"value1":
-  // ${obj1[key]}\n"value2": ${obj2[key]}\n"type": changed\n}`;
-  // }
-  // if (obj1[key] === obj2[key]) {
-  //  return `"key": key"\n"value": ${obj1[key]}\n"type": unchanged\n}`;
-  // }
-  // });
-  //  return `[\n${result.join('\n')}\n]`; // дерево отличий в отдельный файл
-  // };
-//  return iter(obj3);
+  const obj2 = { 
+    follow: false, lalala: { host: 'anna.io', timeout: 50 } 
+};
+  const iter = (node1, node2) => {
+    const keys = [...new Set([...Object.keys(node1), ...Object.keys(node2)])];
+    const result = keys.sort().map((key) => {
+      if (node1[key] !== null && typeof node1[key] === 'object') {
+        return { key, children: [iter(node1[key])], type: 'nested' };
+      }
+      if (node2[key] !== null && typeof node2[key] === 'object') {
+        return { key, children: [iter(node2[key])], type: 'nested' };
+      }
+      if (!obj1.hasOwnProperty(key)) {
+        return { key, value: obj2[key], type: 'added' };
+      }
+      if (!obj2.hasOwnProperty(key)) {
+        return { key, value: obj1[key], type: 'deleted' };
+      }
+      if (obj1[key] !== obj2[key]) {
+        return {
+          key, value1: obj1[key], value2: obj2[key], type: 'changed',
+        };
+      }
+      if (obj1[key] === obj2[key]) {
+        return { key, value: obj1[key], type: 'unchanged' };
+      }
+    });
+    return result; // дерево отличий в отдельный файл
+  };
+  return iter(obj1, obj2);
 };
 
 console.log(genDiff());

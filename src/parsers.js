@@ -1,6 +1,3 @@
-// const json = 'путь до файла'; // process.cwd() экпортировать в файлах, сюда импортировать и обернукть все в path.resolve([...paths])
-
-// const obj = JSON.parse(json);
 import yaml from 'js-yaml';
 
 const parsing = (file, format) => {
@@ -11,8 +8,8 @@ const parsing = (file, format) => {
       return yaml.load(file, 'utf8');
     case '.yaml':
       return yaml.load(file, 'utf8');
-      default:
-        throw new Error(`Unknown format: '${format}'!`);
+    default:
+      throw new Error(`Unknown format: '${format}'!`);
   }
 };
 

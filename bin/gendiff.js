@@ -11,7 +11,7 @@ program
   .option('-f, --format [type]', 'output format')
   .helpOption('-h, --help ', 'output usage information')
   .action((filepath1, filepath2) => {
-    //получить значение опции обращаясь к опции
+    // получить значение опции обращаясь к опции
     console.log(genDiff(filepath1, filepath2));
   });
 program.parse();

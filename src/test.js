@@ -4,7 +4,7 @@ const genDiff = () => {
   };
   const obj2 = { 
     follow: false, lalala: { host: 'anna.io', timeout: 50 } 
-};
+    };
   const iter = (node1, node2) => {
     const keys = [...new Set([...Object.keys(node1), ...Object.keys(node2)])];
     const result = keys.sort().map((key) => {

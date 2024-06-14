@@ -1,6 +1,4 @@
-const getStylish = (tree) => {
-    const margin = '.';
-    let n = 4;
+const getPlain = (tree) => {
     const type = 'type';
     const key1 = 'key';
     const value = 'value';
@@ -12,31 +10,31 @@ const getStylish = (tree) => {
     const keys = Object.keys(obj);
     const res = keys.map((key) => {
     if (key === 'type') {
-
-        if (obj[type] === 'added') {     
-            return `${margin.repeat(4 * depth - 2)}+ ${obj[key1]}: ${obj[value]}`;
+        if (obj[type] === 'added') {  
+            return `Property '${obj[key1]}' was added with value: ${obj[value]}`;
         }
-        if (obj[type] === 'unchanged') {     
-            return `${margin.repeat(4 * depth - 2)}  ${obj[key1]}: ${obj[value]}`;
-        }
+        //if (obj[type] === 'unchanged') {   
+          //  return `${margin.repeat(4 * depth - 2)}  ${obj[key1]}: ${obj[value]}`;
+        //}
         if (obj[type] === 'changed') {  
-            return `${margin.repeat(4 * depth - 2)}- ${obj[key1]}: ${obj[value1]} \n${margin.repeat(4 * depth - 2)}+ ${obj[key1]}: ${obj[value2]}`
+            return `Property '${obj[key1]}' was updated. From ${obj[value1]} to ${obj[value2]}`
         }
         if (obj[type] === 'deleted') {  
-            return `${margin.repeat(4 * depth - 2)}- ${obj[key1]}: ${obj[value]}`
+            return `Property '${obj[key1]}' was removed`
         }
         if (obj[type] === 'nested') {  
-            return `${margin.repeat(4 * depth - 2)}  ${obj[key1]}: ${iter(obj[children], depth + 1)}`
+            return `[complex value]`
+           // return `${margin.repeat(4 * depth - 2)}  ${obj[key1]}: ${iter(obj[children], depth + 1)}`
         }
     }
     })
     return `${res.join('')}`;
     })
-   return `{\n${result.join('\n')}\n${margin.repeat(4 * depth - n)}}`;
+   return `${result.join('\n')}`;
     };
 return iter(tree, 1)
-};
 
+};
 const massiv = [
     {
      "key": "common",
@@ -87,5 +85,4 @@ const massiv = [
         "type": "deleted"
        },
    ]
-   console.log(JSON.stringify(getStylish(massiv)));
-
+   console.log(getPlain(massiv));

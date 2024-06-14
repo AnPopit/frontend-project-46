@@ -2,10 +2,25 @@ import fs from 'fs';
 import path from 'path';
 import genDiff from '../src/index.js';
 
-const filePath = path.resolve(process.cwd(), './__fixtures__/result1.txt');
-const file = fs.readFileSync(filePath, 'utf8');
+const fileStylish = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/stylish_result.txt'), 'utf8');
 
-test('gendiff', () => {
-  expect(genDiff('./file1.json', './file2.json')).toEqual(file);
-  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(file);
+const filePlain = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/plain_result.txt'), 'utf8');
+
+const fileJson = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/json_result.txt'), 'utf8');
+
+
+
+test('stylish', () => {
+  expect(genDiff('./file1.json', './file2.json')).toEqual(fileStylish);
+  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(fileStylish);
+});
+
+test('plain', () => {
+  expect(genDiff('./file1.json', './file2.json')).toEqual(filePlain);
+  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(filePlain);
+});
+
+test('json', () => {
+  expect(genDiff('./file1.json', './file2.json')).toEqual(fileJson);
+  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(fileJson);
 });

@@ -8,8 +8,6 @@ const filePlain = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/pl
 
 const fileJson = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/json_result.txt'), 'utf8');
 
-
-
 test('stylish', () => {
   expect(genDiff('./file1.json', './file2.json')).toEqual(fileStylish);
   expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(fileStylish);

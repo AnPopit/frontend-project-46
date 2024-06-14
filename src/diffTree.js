@@ -1,5 +1,5 @@
-const getDiffTree = () => {
-    const iter = (node1, node2) => {
+const getDiffTree = (obj1, obj2) => {
+  const iter = (node1, node2) => {
     const keys = [...new Set([...Object.keys(node1), ...Object.keys(node2)])];
     const result = keys.sort().map((key) => {
       if ((node1[key] !== null && typeof node1[key] === 'object') && (node2[key] !== null && typeof node2[key] === 'object')) {

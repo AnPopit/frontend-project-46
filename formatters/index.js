@@ -3,16 +3,16 @@ import getPlain from './plain.js';
 import getJson from './json.js';
 
 const formatter = (file, format) => {
-    switch (format) {
-      case 'stylish':
-        return getStylish(file);
-      case 'plain':
-        return getPlain(file);
-      case 'json':
-        return getJson(file);
-      default:
-        throw new Error(`Unknown format: '${format}'!`);
-    }
-  };
-  
-  export default formatter;
+  switch (format) {
+    case 'stylish':
+      return getStylish(file);
+    case 'plain':
+      return getPlain(file);
+    case 'json':
+      return getJson(file);
+    default:
+      throw new Error(`Unknown format: '${format}'!`);
+  }
+};
+
+export default formatter;

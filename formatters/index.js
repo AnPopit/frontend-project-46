@@ -2,7 +2,7 @@ import getStylish from './stylish.js';
 import getPlain from './plain.js';
 import getJson from './json.js';
 
-const formatter = (file, format) => {
+const getFormatter = (file, format) => {
   switch (format) {
     case 'stylish':
       return getStylish(file);
@@ -15,4 +15,4 @@ const formatter = (file, format) => {
   }
 };
 
-export default formatter;
+export default getFormatter;

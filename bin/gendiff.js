@@ -8,10 +8,9 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .version('-V, --version ', 'output the version number')
-  .option('-f, --format [type]', 'output format')
+  .option('-f, --format [type]', 'output format', 'stylish')
   .helpOption('-h, --help ', 'output usage information')
   .action((filepath1, filepath2) => {
-    // получить значение опции обращаясь к опции
-    console.log(genDiff(filepath1, filepath2));
+    console.log(genDiff(filepath1, filepath2)); //нужно обратиться к свойству, commander библиотека
   });
 program.parse();

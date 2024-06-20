@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import parsing from './parsers.js';
-// import parsing from './fo.js';
-// const genDiff = (filepath1, filepath2, format = 'stylish')
-const genDiff = (filepath1, filepath2) => {
+import getFormatter from '../formatters/index.js';
+import getDiffTree from './diffTree.js';
+
+
+const genDiff = (filepath1, filepath2, formatterType = 'stylish') => {
   const filePath1 = path.resolve(process.cwd(), filepath1);
   const file1 = fs.readFileSync(filePath1, 'utf8');
   const format1 = path.extname(filePath1);
@@ -12,20 +14,9 @@ const genDiff = (filepath1, filepath2) => {
   const format2 = path.extname(filePath2);
   const obj1 = parsing(file1, format1);
   const obj2 = parsing(file2, format2);
-  const keys = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
-  const result = keys.sort().map((key) => {
-    if (!obj1.hasOwn(key)) {
-      return `  + ${key}: ${obj2[key]}`;
-    }
-    if (!obj2.hasOwn(key)) {
-      return `  - ${key}: ${obj1[key]}`;
-    }
-    if (obj1[key] !== obj2[key]) {
-      return `  - ${key}: ${obj1[key]}\n  + ${key}: ${obj2[key]}`;
-    }
-    return `    ${key}: ${obj1[key]}`;
-  });
-  return `{\n${result.join('\n')}\n}`; // дерево отличий в отдельный файл
+  const resultDiffTree = getDiffTree(obj1, obj2);
+  const resultFormatters = getFormatter(resultDiffTree, formatterType);
+  return resultFormatters;
 };
 
 export default genDiff;

@@ -32,7 +32,7 @@ const getStylish = (tree) => {
         case 'unchanged':
           return `${getMargin(depth, offset)}  ${obj.key}: ${stringify(obj.value, depth)}`;
         case 'changed':
-          return `${getMargin(depth, offset)}- ${obj.key}: ${stringify(obj.value1, depth)}\n${getMargin(depth, offset)}+ ${obj.key}: ${obj.value2}`;
+          return `${getMargin(depth, offset)}- ${obj.key}: ${stringify(obj.value1, depth)}\n${getMargin(depth, offset)}+ ${obj.key}: ${stringify(obj.value2, depth)}`;
         case 'deleted':
           return `${getMargin(depth, offset)}- ${obj.key}: ${stringify(obj.value, depth)}`;
         case 'nested':

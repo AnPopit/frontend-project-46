@@ -12,7 +12,7 @@ const stringify = (value, dep) => {
     const keys = Object.keys(node);
     const result = keys.map((key) => {
       if (node[key] !== null && typeof node[key] === 'object') {
-        return `${getMargin(depth)}${key}: ${iter(node[key], depth + 1)}`;
+        return `${getMargin(depth +1)}${key}: ${iter(node[key], depth + 1)}`;
       }
       return `${getMargin(depth + 1)}${key}: ${node[key]}`;
     });
@@ -35,7 +35,7 @@ const getStylish = (tree) => {
             case 'unchanged':
               return `${getMargin(depth, offset)}  ${obj.key}: ${stringify(obj.value, depth)}`;
             case 'changed':
-              return `${getMargin(depth, offset)}- ${obj.key}: ${obj.value1}\n${getMargin(depth, offset)}+ ${obj.key}: ${obj.value2}`;
+              return `${getMargin(depth, offset)}- ${obj.key}: ${stringify(obj.value1, depth)}\n${getMargin(depth, offset)}+ ${obj.key}: ${obj.value2}`;
             case 'deleted':
               return `${getMargin(depth, offset)}- ${obj.key}: ${stringify(obj.value, depth)}`;
             case 'nested':

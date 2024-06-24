@@ -23,7 +23,7 @@ const stringify = (value, dep) => {
 
 const getStylish = (tree) => {
   const offset = 2;
-  const offsetMargin = 4; // закр-ся скобки
+  const offsetMargin = 4;
   const iter = (node, depth) => {
     const result = node.map((obj) => {
       switch (obj.type) {

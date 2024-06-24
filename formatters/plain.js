@@ -11,24 +11,24 @@ const getValue = (value) => {
 const getPlain = (tree) => {
   const iter = (node, path) => {
     const result = node.map((obj) => {
-          const newAncestry = path === '' ? `${obj.key}` : `${path}.${obj.key}`;
-          switch (obj.type) {
-            case 'added':
-              return `Property '${newAncestry}' was added with value: ${getValue(obj.value)}`;
-           case 'unchanged':
-              return null;
-            case 'changed':
-              return `Property '${newAncestry}' was updated. From ${getValue(obj.value1)} to ${getValue(obj.value2)}`;
-            case 'deleted':
-              return `Property '${newAncestry}' was removed`;
-            case 'nested':
-              return iter(obj.children, newAncestry);
-            default:
-              throw new Error('Unknown type!');
-          }
-      });
-      let res = result.join('\n');
-      const resFil = res.replace(/^\s*[\r\n]/gm, '')
+      const newAncestry = path === '' ? `${obj.key}` : `${path}.${obj.key}`;
+      switch (obj.type) {
+        case 'added':
+          return `Property '${newAncestry}' was added with value: ${getValue(obj.value)}`;
+        case 'unchanged':
+          return null;
+        case 'changed':
+          return `Property '${newAncestry}' was updated. From ${getValue(obj.value1)} to ${getValue(obj.value2)}`;
+        case 'deleted':
+          return `Property '${newAncestry}' was removed`;
+        case 'nested':
+          return iter(obj.children, newAncestry);
+        default:
+          throw new Error('Unknown type!');
+      }
+    });
+    const res = result.join('\n');
+    const resFil = res.replace(/^\s*[\r\n]/gm, '');
     return resFil;
   };
   return iter(tree, '');

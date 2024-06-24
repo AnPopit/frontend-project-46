@@ -4,7 +4,6 @@ import parsing from './parsers.js';
 import getFormatter from '../formatters/index.js';
 import getDiffTree from './diffTree.js';
 
-
 const genDiff = (filepath1, filepath2, formatterType = 'stylish') => {
   const filePath1 = path.resolve(process.cwd(), filepath1);
   const file1 = fs.readFileSync(filePath1, 'utf8');

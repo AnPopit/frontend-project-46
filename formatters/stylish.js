@@ -6,7 +6,7 @@ const getMargin = (depthFun, offset = 0) => {
 
 const stringify = (value, dep) => {
   const iter = (node, depth) => {
-    if (typeof node === 'string' || typeof node === 'number' || typeof node === 'boolean') {
+    if (typeof node === 'string' || typeof node === 'number' || typeof node === 'boolean' || node === false ) {
       return `${node}`;
     }
     const keys = Object.keys(node);

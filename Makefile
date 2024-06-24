@@ -7,8 +7,8 @@ lint:
 gendiff:
 	node bin/gendiff.js
 test:
-	npm test
+	npx jest
 test-coverage:
-	npm test -- --coverage --coverageProvider=v8
+	npm run test:coverage
 
 .PHONY: install publish lint gendiff

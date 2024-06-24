@@ -10,15 +10,15 @@ const fileJson = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/jso
 
 test('stylish', () => {
   expect(genDiff('./file1.json', './file2.json', 'stylish')).toEqual(fileStylish);
-  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(fileStylish);
+  expect(genDiff('./file1.yaml', './file2.yaml', 'stylish')).toEqual(fileStylish);
 });
 
 test('plain', () => {
   expect(genDiff('./file1.json', './file2.json', 'plain')).toEqual(filePlain);
-  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(filePlain);
+  expect(genDiff('./file1.yaml', './file2.yaml', 'plain')).toEqual(filePlain);
 });
 
 test('json', () => {
   expect(genDiff('./file1.json', './file2.json', 'json')).toEqual(fileJson);
-  expect(genDiff('./file1.yaml', './file2.yaml')).toEqual(fileJson);
+  expect(genDiff('./file1.yaml', './file2.yaml', 'json')).toEqual(fileJson);
 });

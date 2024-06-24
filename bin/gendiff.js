@@ -11,6 +11,7 @@ program
   .option('-f, --format [type]', 'output format', 'stylish')
   .helpOption('-h, --help ', 'output usage information')
   .action((filepath1, filepath2) => {
-    console.log(genDiff(filepath1, filepath2)); //нужно обратиться к свойству, commander библиотека
+    const option = program.opts();
+    console.log(genDiff(filepath1, filepath2, option.format)); //нужно обратиться к свойству, commander библиотека
   });
 program.parse();

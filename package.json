@@ -1,5 +1,8 @@
 {
   "name": "@hexlet/code",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/AnPopit/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AnPopit/frontend-project-46/actions)",
   "main": "src/index.js",

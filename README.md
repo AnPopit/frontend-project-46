@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/AnPopit/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AnPopit/frontend-project-46/actions)
 <a href="https://codeclimate.com/github/AnPopit/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee91eeef6631ce8702e6/maintainability" /></a>
 <a href="https://codeclimate.com/github/AnPopit/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ee91eeef6631ce8702e6/test_coverage" /></a>
-Project "Difference Calculator"
+<h1>Project "Difference Calculator"</h1>
 Minimum requirements: Node.js v20.11.1
 Launch: node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json 
 Valid options: -V, --version; -f, --format [type]; -h, --help

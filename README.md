@@ -3,10 +3,10 @@
 <a href="https://codeclimate.com/github/AnPopit/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee91eeef6631ce8702e6/maintainability" /></a>
 <a href="https://codeclimate.com/github/AnPopit/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ee91eeef6631ce8702e6/test_coverage" /></a>
 <h1>Project "Difference Calculator"</h1>
-Minimum requirements: Node.js v20.11.1
-Launch: node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json 
-Valid options: -V, --version; -f, --format [type]; -h, --help
-This project finds differences between files and outputs the difference in a specific format. Acceptable input file formats:
+<h2>Minimum requirements:</h2><p>Node.js v20.11.1</p>
+<h2>Launch:</h2> <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json </p>
+<h2>Valid options:</h2> <p>-V, --version; -f, --format [type]; -h, --help</p>
+<p>This project finds differences between files and outputs the difference in a specific format. Acceptable input file formats:</p>
 -json
 -yaml, yml
 Possible output formats:

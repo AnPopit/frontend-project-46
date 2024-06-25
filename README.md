@@ -28,6 +28,7 @@
 <h3>output formats: plain</h3>
 <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'plain'</p>
 [![asciicast](https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD.svg)](https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD)
+<a href="https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD" target="_blank"><img src="https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD.svg" /></a>
 <h3>output formats: json</h3>
 <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'json'</p>
 [![asciicast](https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B.svg)](https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B)

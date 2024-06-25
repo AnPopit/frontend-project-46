@@ -1,24 +1,38 @@
 import fs from 'fs';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import genDiff from '../src/index.js';
 
-const fileStylish = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/stylish_result.txt'), 'utf8');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const filePlain = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/plain_result.txt'), 'utf8');
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getFixturePathStylish = getFixturePath('stylish_result.txt');
+const getFixturePathPlain = getFixturePath('plain_result.txt');
+const getFixturePathJson = getFixturePath('json_result.txt');
 
-const fileJson = fs.readFileSync(path.resolve(process.cwd(), './__fixtures__/json_result.txt'), 'utf8');
+const fileStylish = fs.readFileSync(getFixturePathStylish, 'utf8');
+
+const filePlain = fs.readFileSync(getFixturePathPlain, 'utf8');
+
+const fileJson = fs.readFileSync(getFixturePathJson, 'utf8');
+
+const pathJson1 = getFixturePath('file1.json');
+const pathJson2 = getFixturePath('file2.json');
+const pathYaml1 = getFixturePath('file1.yaml');
+const pathYaml2 = getFixturePath('file2.yaml');
 
 test('stylish', () => {
-  expect(genDiff('./file1.json', './file2.json', 'stylish')).toEqual(fileStylish);
-  expect(genDiff('./file1.yaml', './file2.yaml', 'stylish')).toEqual(fileStylish);
+  expect(genDiff(pathJson1, pathJson2, 'stylish')).toEqual(fileStylish);
+  expect(genDiff(pathYaml1, pathYaml2, 'stylish')).toEqual(fileStylish);
 });
 
 test('plain', () => {
-  expect(genDiff('./file1.json', './file2.json', 'plain')).toEqual(filePlain);
-  expect(genDiff('./file1.yaml', './file2.yaml', 'plain')).toEqual(filePlain);
+  expect(genDiff(pathJson1, pathJson2, 'plain')).toEqual(filePlain);
+  expect(genDiff(pathYaml1, pathYaml2, 'plain')).toEqual(filePlain);
 });
 
 test('json', () => {
-  expect(genDiff('./file1.json', './file2.json', 'json')).toEqual(fileJson);
-  expect(genDiff('./file1.yaml', './file2.yaml', 'json')).toEqual(fileJson);
+  expect(genDiff(pathJson1, pathJson2, 'json')).toEqual(fileJson);
+  expect(genDiff(pathYaml1, pathYaml2, 'json')).toEqual(fileJson);
 });

@@ -19,12 +19,15 @@
 </ul>
 <h2>Plain File Comparison in format "json"</h2>
 [![asciicast](https://asciinema.org/a/3PmZMon2bKK9rS5UFT9QAL3kT.svg)](https://asciinema.org/a/3PmZMon2bKK9rS5UFT9QAL3kT)
+<a href="https://asciinema.org/a/3PmZMon2bKK9rS5UFT9QAL3kT" target="_blank"><img src="https://asciinema.org/a/3PmZMon2bKK9rS5UFT9QAL3kT.svg" /></a>
 <h2>Plain File Comparison in format "json", "yaml"</h2>
 [![asciicast](https://asciinema.org/a/29DftIy0ZTKKz9UBua9W05Kst.svg)](https://asciinema.org/a/29DftIy0ZTKKz9UBua9W05Kst)
+<a href="https://asciinema.org/a/29DftIy0ZTKKz9UBua9W05Kst" target="_blank"><img src="https://asciinema.org/a/29DftIy0ZTKKz9UBua9W05Kst.svg" /></a>
 <h2>Comparison of nested files in format "json":</h2>
 <h3>output formats: stylish</h3>
 <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json </p>
 [![asciicast](https://asciinema.org/a/W0WNZfZ9606fl1MVnKZq6D4ec.svg)](https://asciinema.org/a/W0WNZfZ9606fl1MVnKZq6D4ec)
+<a href="https://asciinema.org/a/W0WNZfZ9606fl1MVnKZq6D4ec" target="_blank"><img src="https://asciinema.org/a/W0WNZfZ9606fl1MVnKZq6D4ec.svg" /></a>
 <h3>output formats: plain</h3>
 <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'plain'</p>
 [![asciicast](https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD.svg)](https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD)
@@ -32,14 +35,18 @@
 <h3>output formats: json</h3>
 <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'json'</p>
 [![asciicast](https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B.svg)](https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B)
+<a href="https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B" target="_blank"><img src="https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B.svg" /></a>
 <h2>Comparison of nested files in format "yaml":</h2>
 <h3>output formats: stylish</h3>
 <p>node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml </p>
 [![asciicast](https://asciinema.org/a/4yMvV8GiVNtpHM5RliMMyAANM.svg)](https://asciinema.org/a/4yMvV8GiVNtpHM5RliMMyAANM)
+<a href="https://asciinema.org/a/4yMvV8GiVNtpHM5RliMMyAANM" target="_blank"><img src="https://asciinema.org/a/4yMvV8GiVNtpHM5RliMMyAANM.svg" /></a>
 <h3>output formats: plain</h3>
 <p>node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml -f 'plain'</p>
 [![asciicast](https://asciinema.org/a/kB6OmY3P5mFj1ElLD3EGIhliF.svg)](https://asciinema.org/a/kB6OmY3P5mFj1ElLD3EGIhliF)
+<a href="https://asciinema.org/a/kB6OmY3P5mFj1ElLD3EGIhliF" target="_blank"><img src="https://asciinema.org/a/kB6OmY3P5mFj1ElLD3EGIhliF.svg" /></a>
 <h3>output formats: json</h3>
 <p>node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml -f 'json'</p>
 [![asciicast](https://asciinema.org/a/Liq2mKw2xKLsVtRhz365xIhQk.svg)](https://asciinema.org/a/Liq2mKw2xKLsVtRhz365xIhQk)
+<a href="https://asciinema.org/a/Liq2mKw2xKLsVtRhz365xIhQk" target="_blank"><img src="https://asciinema.org/a/Liq2mKw2xKLsVtRhz365xIhQk.svg" /></a>
 

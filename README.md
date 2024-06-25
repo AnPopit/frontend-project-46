@@ -6,35 +6,39 @@
 <h2>Minimum requirements:</h2><p>Node.js v20.11.1</p>
 <h2>Launch:</h2> <p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json </p>
 <h2>Valid options:</h2> <p>-V, --version; -f, --format [type]; -h, --help</p>
-<p>This project finds differences between files and outputs the difference in a specific format. Acceptable input file formats:</p>
--json
--yaml, yml
-Possible output formats:
--stylish
--plain
--json
-Plain File Comparison in format "json"
+<h3>This project finds differences between files and outputs the difference in a specific format. Acceptable input file formats:</h3>
+<ul>
+<li>json</li>
+<li>yaml, yml</li>
+</ul>
+<h3>Possible output formats:</h3>
+<ul>
+<li>stylish</li>
+<li>plain</li>
+<li>json</li>
+</ul>
+<h2>Plain File Comparison in format "json"</h2>
 [![asciicast](https://asciinema.org/a/3PmZMon2bKK9rS5UFT9QAL3kT.svg)](https://asciinema.org/a/3PmZMon2bKK9rS5UFT9QAL3kT)
-Plain File Comparison in format "json", "yaml"
+<h2>Plain File Comparison in format "json", "yaml"</h2>
 [![asciicast](https://asciinema.org/a/29DftIy0ZTKKz9UBua9W05Kst.svg)](https://asciinema.org/a/29DftIy0ZTKKz9UBua9W05Kst)
-Comparison of nested files in format "json":
-output formats: stylish
-node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json 
+<h2>Comparison of nested files in format "json":</h2>
+<h3>output formats: stylish</h3>
+<p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json </p>
 [![asciicast](https://asciinema.org/a/W0WNZfZ9606fl1MVnKZq6D4ec.svg)](https://asciinema.org/a/W0WNZfZ9606fl1MVnKZq6D4ec)
-output formats: plain
-node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'plain'
+<h3>output formats: plain</h3>
+<p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'plain'</p>
 [![asciicast](https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD.svg)](https://asciinema.org/a/xodEwF1YJRoKTHb5ucPOhPPaD)
-output formats: json
-node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'json'
+<h3>output formats: json</h3>
+<p>node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json -f 'json'</p>
 [![asciicast](https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B.svg)](https://asciinema.org/a/zqT9SmsTJyQ3VSMWQf7mrBY2B)
-Comparison of nested files in format "yaml":
-output formats: stylish
-node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml 
+<h2>Comparison of nested files in format "yaml":</h2>
+<h3>output formats: stylish</h3>
+<p>node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml </p>
 [![asciicast](https://asciinema.org/a/4yMvV8GiVNtpHM5RliMMyAANM.svg)](https://asciinema.org/a/4yMvV8GiVNtpHM5RliMMyAANM)
-output formats: plain
-node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml -f 'plain'
+<h3>output formats: plain</h3>
+<p>node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml -f 'plain'</p>
 [![asciicast](https://asciinema.org/a/kB6OmY3P5mFj1ElLD3EGIhliF.svg)](https://asciinema.org/a/kB6OmY3P5mFj1ElLD3EGIhliF)
-output formats: json
-node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml -f 'json'
+<h3>output formats: json</h3>
+<p>node bin/gendiff __fixtures__/file1.yml __fixtures__/file2.yml -f 'json'</p>
 [![asciicast](https://asciinema.org/a/Liq2mKw2xKLsVtRhz365xIhQk.svg)](https://asciinema.org/a/Liq2mKw2xKLsVtRhz365xIhQk)
 

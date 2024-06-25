@@ -2,7 +2,7 @@ import path from 'path';
 import readFile from './reader.js';
 import parsing from './parsers.js';
 
-import getFormatter from '../formatters/index.js';
+import getFormatter from './formatters/index.js';
 import getDiffTree from './diffTree.js';
 
 const genDiff = (filepath1, filepath2, formatterType = 'stylish') => {

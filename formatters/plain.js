@@ -28,7 +28,7 @@ const getPlain = (tree) => {
       }
     });
     const res = result.join('\n');
-    const resFil = res.replace(/^\s*[\r\n]/gm, '');
+    const resFil = res.replace(/^(?=\n)$|^\s*|\s*$|\n\n+/gm, '');
     return resFil;
   };
   return iter(tree, '');

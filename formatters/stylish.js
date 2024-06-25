@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const getMargin = (depthFun, offset = 0) => {
   const countMargin = 4;
   const margin = ' ';
@@ -6,12 +8,12 @@ const getMargin = (depthFun, offset = 0) => {
 
 const stringify = (value, dep) => {
   const iter = (node, depth) => {
-    if (!(node !== null && typeof node === 'object')) {
+    if (!(_.isPlainObject(node))) {
       return `${node}`;
     }
     const keys = Object.keys(node);
     const result = keys.map((key) => {
-      if (node[key] !== null && typeof node[key] === 'object') {
+      if (_.isPlainObject(node[key])) {
         return `${getMargin(depth + 1)}${key}: ${iter(node[key], depth + 1)}`;
       }
       return `${getMargin(depth + 1)}${key}: ${node[key]}`;

@@ -3,7 +3,7 @@ import _ from 'lodash';
 const getDiffTree = (obj1, obj2) => {
   const iter = (node1, node2) => {
     const keys = [...new Set([...Object.keys(node1), ...Object.keys(node2)])];
-    const result = keys.sort().map((key) => {
+    const result = _.sortBy(keys).map((key) => {
       if ((node1[key] !== null && typeof node1[key] === 'object') && (node2[key] !== null && typeof node2[key] === 'object')) {
         return { key, children: iter(node1[key], node2[key]), type: 'nested' };
       }

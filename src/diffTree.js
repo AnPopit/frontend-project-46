@@ -4,7 +4,7 @@ const getDiffTree = (obj1, obj2) => {
   const iter = (node1, node2) => {
     const keys = [...new Set([...Object.keys(node1), ...Object.keys(node2)])];
     return _.sortBy(keys).map((key) => {
-      if (_.isPlainObject(node1[key])&& _.isPlainObject(node2[key])) { 
+      if (_.isPlainObject(node1[key]) && _.isPlainObject(node2[key])) {
         return { key, children: iter(node1[key], node2[key]), type: 'nested' };
       }
       if (!(_.has(node1, key))) {

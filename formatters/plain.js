@@ -13,17 +13,18 @@ const getValue = (value) => {
 const getPlain = (tree) => {
   const iter = (node, path) => {
     const result = node.map((obj) => {
+      const newPath = `${path}.${obj.key}`.slice(1);
       switch (obj.type) {
         case 'added':
-          return `Property '${path + obj.key}' was added with value: ${getValue(obj.value)}\n`;
+          return `Property '${newPath}' was added with value: ${getValue(obj.value)}\n`;
         case 'unchanged':
           return '';
         case 'changed':
-          return `Property '${path + obj.key}' was updated. From ${getValue(obj.value1)} to ${getValue(obj.value2)}\n`;
+          return `Property '${newPath}' was updated. From ${getValue(obj.value1)} to ${getValue(obj.value2)}\n`;
         case 'deleted':
-          return `Property '${path + obj.key}' was removed\n`;
+          return `Property '${newPath}' was removed\n`;
         case 'nested':
-          return iter(obj.children, path + obj.key);
+          return iter(obj.children, `${path}.${obj.key}`);
         default:
           throw new Error('Unknown type!');
       }

@@ -12,12 +12,7 @@ const stringify = (value, dep) => {
       return `${node}`;
     }
     const keys = Object.keys(node);
-    const result = keys.map((key) => {
-      if (_.isPlainObject(node[key])) {
-        return `${getMargin(depth + 1)}${key}: ${iter(node[key], depth + 1)}`;
-      }
-      return `${getMargin(depth + 1)}${key}: ${node[key]}`;
-    });
+    const result = keys.map((key) => `${getMargin(depth + 1)}${key}: ${iter(node[key], depth + 1)}`);
     return `{\n${result.join('\n')}\n${getMargin(depth)}}`;
   };
   return iter(value, dep);

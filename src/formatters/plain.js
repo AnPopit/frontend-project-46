@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const getValue = (value) => {
-  if (typeof (value) === 'boolean' || value === null || typeof (value) === 'number') {
+  if (!(typeof (value) === 'string')) {
     return value;
   }
   if (_.isPlainObject(value)) {

@@ -4,13 +4,13 @@
     "gendiff": "bin/gendiff.js"
   },
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/AnPopit/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AnPopit/frontend-project-46/actions)",
+  "description": "This project is designed to calculate differences between files.",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Anna Politova",
   "license": "ISC",
   "dependencies": {
     "commander": "^12.0.0",

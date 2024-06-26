@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
 const getValue = (value) => {
-  if (!(typeof (value) === 'string')) {
-    return value;
+  if ((typeof (value) === 'string')) {
+    return `'${value}'`;
   }
   if (_.isPlainObject(value)) {
     return '[complex value]';
   }
-  return `'${value}'`;
+  return value;
 };
 
 const getPlain = (tree) => {
